@@ -21,7 +21,7 @@ If you want to build the image:
 
 - Linux or Mac as the base OS for the build.
 - [Docker](https://www.docker.com) installed.
-- [Teecke devcontrol](https://github.com/teecke/devcontrol) installed (3).
+- [Teecke devcontrol](https://github.com/teecke/devcontrol) installed.
 
 ## Usage
 
