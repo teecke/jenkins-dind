@@ -31,11 +31,8 @@ It's based in a combination of jenkins/jenkins:lts docker image and docker:dind
             ;;
         exec)
             checkDocker
-            # Get build parameter as image tag or use "latest" by default
-            imageTag=${2-latest}
-            if [ "${imageTag}" == "" ]; then
-                imageTag="latest"
-            fi
+            # Get jenkins version
+            source jenkins-version.ini
             # Prepare build directory
             baseDir=$(pwd)
             buildDir=$(mktemp -d)
@@ -48,7 +45,8 @@ It's based in a combination of jenkins/jenkins:lts docker image and docker:dind
             grep -v "^FROM\|^ENTRYPOINT" Dockerfile-alpine >> Dockerfile-teecke-jenkins-dind 
             echo "USER root" >> Dockerfile-teecke-jenkins-dind
             # Build the teecke/jenkins-dind docker image
-            docker build --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:${imageTag} .
+            docker build --build-arg JENKINS_VERSION=${JENKINS_VERSION} --build-arg JENKINS_SHA=${JENKINS_SHA} --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:${JENKINS_VERSION} .
+            docker build --build-arg JENKINS_VERSION=${JENKINS_VERSION} --build-arg JENKINS_SHA=${JENKINS_SHA} --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:latest .
             # Prune build dir
             cd "${baseDir}"
             rm -rf "${buildDir}"
