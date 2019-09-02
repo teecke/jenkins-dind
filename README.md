@@ -25,8 +25,27 @@ If you want to build the image:
 
 ## Usage
 
-To start a Jenkins Dind container follow the same instructions as in the [Jenkins](https://github.com/jenkinsci/docker) project, but changing "jenkins/jenkins:lts" docker image reference with "teecke/jenkins-dind" and adding the `--privileged` flag
+### Build
 
+Build the Teecke Jenkins DIND docker image with
+
+```console
+docker build -t jenkins-dind .
+```
+
+You can change the Jenkins version number in the "jenkins-version.ini" file
+
+```console
+cat jenkins-version.ini
+JENKINS_VERSION=2.176.3
+JENKINS_SHA=9406c7bee2bc473f77191ace951993f89922f927a0cd7efb658a4247d67b9aa3
+```
+
+Open <https://updates.jenkins-ci.org/download/war/> URL and look for the SHA-256 hash string of the version you want. Then place both values (version number and jenkins WAR file SHA-256 string) in the `jenkins-version.ini` file
+
+### Run
+
+To start a Jenkins Dind container follow the same instructions as in the [Jenkins](https://github.com/jenkinsci/docker) project, but changing "jenkins/jenkins:lts" docker image reference with "teecke/jenkins-dind" and adding the `--privileged` flag
 
 After the container starts, you can view the `jenkins` and `docker` processes running and you can run a docker container within the running container, even with the `jenkins` user.
 
@@ -75,6 +94,7 @@ For more examples and ideas, visit:
  https://docs.docker.com/get-started/
 
 ```
+
 
 ## Credits
 
