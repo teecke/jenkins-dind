@@ -29,25 +29,16 @@ pipeline {
             steps  {
                 jplStart(cfg)
                 script {
-                    jenkinsVersion = sh (script: 'source jenkins-version.ini && echo ${JENKINS_VERSION}', returnStdout: true).trim()
+                    jenkinsVersion = sh (script: 'cat jenkins-version.ini|grep JENKINS_VERSION|cut -f 2 -d "="', returnStdout: true).trim()
                 }
             }
         }
         stage ('Build') {
             steps {
                 script {
-                    docker.build("teecke/jenkins-dind:test", "--pull .")
-                    docker.build("teecke/jenkins-dind:latest")
-                }
-            }
-        }
-        stage ('Test') {
-            steps  {
-                sh 'bin/test.sh'
-            }
-            post {
-                always {
-                    sh 'docker rmi teecke/jenkins-dind:latest'
+                    sh """devcontrol build
+                    docker tag teecke/jenkins-dind:$jenkinsVersion teecke/jenkins-dind:latest
+                    """
                 }
             }
         }
