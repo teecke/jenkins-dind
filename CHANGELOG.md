@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.2.1 (2019-09-02)
+
+### Build
+
+* Update Auto Release Log adding v0.2.1 info with JPL ([d1a121a](https://github.com/teecke/jenkins-dind/commit/d1a121a))
+* Don't build with Jenkins embedded docker, just push ([14ce197](https://github.com/teecke/jenkins-dind/commit/14ce197))
+* Review pipeline script ([f8f2b88](https://github.com/teecke/jenkins-dind/commit/f8f2b88))
+* Typo in pipeline ([51af6e2](https://github.com/teecke/jenkins-dind/commit/51af6e2))
+* Add jenkins pipeline script ([cb40834](https://github.com/teecke/jenkins-dind/commit/cb40834))
+
+### Docs
+
+* Review main readme ([4aed472](https://github.com/teecke/jenkins-dind/commit/4aed472))
+* Add jenkins version control to main readme file ([f17f927](https://github.com/teecke/jenkins-dind/commit/f17f927))
+* Update CHANGELOG.md to v0.2.0 ([97246b5](https://github.com/teecke/jenkins-dind/commit/97246b5))
+
 ## v0.2.0 (2019-08-31)
 
 ### New
