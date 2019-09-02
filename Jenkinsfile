@@ -29,7 +29,7 @@ pipeline {
             steps  {
                 jplStart(cfg)
                 script {
-                    jenkinssVersion = sh (script: 'source jenkins-version.ini; echo $JENKINS_VERSION', returnStdout: true).trim()
+                    jenkinsVersion = sh (script: 'source jenkins-version.ini && echo ${JENKINS_VERSION}', returnStdout: true).trim()
                 }
             }
         }
