@@ -16,8 +16,8 @@ def publishDocumentation() {
 }
 def publishDockerImage(String jenkinsVersion) {
     docker.withRegistry("https://registry.hub.docker.com", 'teeckebot-docker-credentials') {
-        docker.build("teecke/jenkins-dind:latest").push()
-        docker.build("teecke/jenkins-dind:${jenkinsVersion}").push()
+        docker.image("teecke/jenkins-dind:latest").push()
+        docker.image("teecke/jenkins-dind:${jenkinsVersion}").push()
     }
 }
 
