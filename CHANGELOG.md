@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.3.0 (2019-09-06)
+
+### New
+
+* Add bash linter ([3fe0e5f](https://github.com/teecke/jenkins-dind/commit/3fe0e5f))
+
+### Update
+
+* Apply rules of shellcheck ([6b712a5](https://github.com/teecke/jenkins-dind/commit/6b712a5))
+
+### Build
+
+* Update Auto Release Log adding v0.3.0 info with JPL ([54b3f87](https://github.com/teecke/jenkins-dind/commit/54b3f87))
+* Add bash linter stage ([ed131c0](https://github.com/teecke/jenkins-dind/commit/ed131c0))
+* Use teecke jpl v3.2.0 ([b04f2da](https://github.com/teecke/jenkins-dind/commit/b04f2da))
+
+### Docs
+
+* Generate v0.2.1 changelog with JPL ([61a8bbf](https://github.com/teecke/jenkins-dind/commit/61a8bbf))
+
 ## v0.2.1 (2019-09-02)
 
 ### Build
