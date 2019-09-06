@@ -6,14 +6,6 @@
 cfg = jplConfig('jenkins-dind', 'docker', '', [slack: '', email:'pedroamador.rodriguez+teecke@gmail.com'])
 String jenkinsVersion
 
-def publishDocumentation() {
-    sh """
-    git checkout ${cfg.BRANCH_NAME}
-    make
-    git add README.md
-    git diff-files --quiet || git commit -m "Docs: Update README.md with Red Panda JPL"
-    """
-}
 def publishDockerImage(String jenkinsVersion) {
     docker.withRegistry("https://registry.hub.docker.com", 'teeckebot-docker-credentials') {
         docker.image("teecke/jenkins-dind:latest").push()
@@ -33,6 +25,13 @@ pipeline {
                 }
             }
         }
+        stage ('Bash linter') {
+            steps {
+                script {
+                    sh "devcontrol run-bash-linter"
+                }
+            }
+        }
         stage ('Build') {
             steps {
                 script {
@@ -45,10 +44,8 @@ pipeline {
         stage('Make release') {
             when { expression { cfg.BRANCH_NAME.startsWith('release/new') } }
             steps {
-                // publishDocumentation(jenkinsVersion)
                 publishDockerImage(jenkinsVersion)
                 jplMakeRelease(cfg, true)
-                jplCloseRelease(cfg)
             }
         }
     }
