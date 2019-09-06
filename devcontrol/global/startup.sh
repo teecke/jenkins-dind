@@ -2,7 +2,7 @@
 
 # @file devcontrol/global/startup.sh
 # @brief devcontrol startup script and functions
-echo "Jenkins Dind(c) 2019"
+echo "Jenkins DinD (c) Teecke 2019"
 echo
 
 # @description Check presence of docker-related pieces in the system
@@ -18,6 +18,6 @@ echo
 # @stdout Show "Docker not present. Exiting -" message if missing docker
 #
 function checkDocker() {
-    which docker > /dev/null 2>&1 || bash -c 'echo "Missing docker: aborting"; exit  1'
+    command -v docker > /dev/null 2>&1 || bash -c 'echo "Missing docker: aborting"; exit  1'
 }
 export -f checkDocker

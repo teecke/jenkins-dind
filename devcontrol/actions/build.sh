@@ -16,26 +16,30 @@ set -euo pipefail
 function build() {
 
     # Init
-    local briefMessage="Build the teecke/jenkins-dind docker image"
-    local helpMessage="""Build the Jenkins Dind image.
-It's based in a combination of jenkins/jenkins:lts docker image and docker:dind
-"""
+    local briefMessage
+    local helpMessage
+    briefMessage="Build the teecke/jenkins-dind docker image"
+    helpMessage=$(cat <<EOF
+Build the Jenkins Dind image.
+It is based in a combination of jenkins/jenkins:lts docker image and docker:dind
+EOF
+)
 
     # Task choosing
     case $1 in
         brief)
-            showBriefMessage ${FUNCNAME[0]} "$briefMessage"
+            showBriefMessage "${FUNCNAME[0]}" "$briefMessage"
             ;;
         help)
-            showHelpMessage ${FUNCNAME[0]} "$helpMessage"
+            showHelpMessage "${FUNCNAME[0]}" "$helpMessage"
             ;;
         exec)
             checkDocker
             # Get jenkins version
             source jenkins-version.ini
             # Prepare build directory
-            baseDir=$(pwd)
-            buildDir=$(mktemp -d)
+            baseDir="$(pwd)"
+            buildDir="$(mktemp -d)"
             cd "${buildDir}"
             git clone --quiet https://github.com/jenkinsci/docker.git .
             rsync -a "${baseDir}/resources/" resources/
@@ -45,14 +49,14 @@ It's based in a combination of jenkins/jenkins:lts docker image and docker:dind
             grep -v "^FROM\|^ENTRYPOINT" Dockerfile-alpine >> Dockerfile-teecke-jenkins-dind 
             echo "USER root" >> Dockerfile-teecke-jenkins-dind
             # Build the teecke/jenkins-dind docker image
-            docker build --build-arg JENKINS_VERSION=${JENKINS_VERSION} --build-arg JENKINS_SHA=${JENKINS_SHA} --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:${JENKINS_VERSION} .
-            docker build --build-arg JENKINS_VERSION=${JENKINS_VERSION} --build-arg JENKINS_SHA=${JENKINS_SHA} --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:latest .
+            docker build --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:"${JENKINS_VERSION}" .
+            docker build --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:latest .
             # Prune build dir
-            cd "${baseDir}"
+            cd "${baseDir}" || exit 1
             rm -rf "${buildDir}"
             ;;
         *)
-            showNotImplemtedMessage $1 ${FUNCNAME[0]}
+            showNotImplemtedMessage "$1" "${FUNCNAME[0]}"
             return 1
     esac
 }
