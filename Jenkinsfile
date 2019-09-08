@@ -1,9 +1,9 @@
 #!groovy
 
-@Library('github.com/teecke/jenkins-pipeline-library@v3.2.0') _
+@Library('github.com/teecke/jenkins-pipeline-library@v3.3.0') _
 
 // Initialize global config
-cfg = jplConfig('jenkins-dind', 'docker', '', [slack: '', email:'pedroamador.rodriguez+teecke@gmail.com'])
+cfg = jplConfig('jenkins-dind', 'docker', '', [email:'pedroamador.rodriguez+teecke@gmail.com'])
 String jenkinsVersion
 
 def publishDockerImage(String jenkinsVersion) {
@@ -35,9 +35,7 @@ pipeline {
         stage ('Build') {
             steps {
                 script {
-                    sh """devcontrol build
-                    docker tag teecke/jenkins-dind:$jenkinsVersion teecke/jenkins-dind:latest
-                    """
+                    sh "devcontrol build"
                 }
             }
         }
