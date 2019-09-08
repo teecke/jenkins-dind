@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.3.1 (2019-09-08)
+
+### Build
+
+* Update Auto Release Log adding v0.3.1 info with JPL ([77ff12d](https://github.com/teecke/jenkins-dind/commit/77ff12d))
+* Update to jpl v3.3.1 ([3454848](https://github.com/teecke/jenkins-dind/commit/3454848))
+
+### Docs
+
+* Generate v0.3.0 changelog with JPL ([c91791e](https://github.com/teecke/jenkins-dind/commit/c91791e))
+
 ## v0.3.0 (2019-09-06)
 
 ### New
