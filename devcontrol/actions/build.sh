@@ -49,8 +49,8 @@ EOF
             grep -v "^FROM\|^ENTRYPOINT" Dockerfile-alpine >> Dockerfile-teecke-jenkins-dind 
             echo "USER root" >> Dockerfile-teecke-jenkins-dind
             # Build the teecke/jenkins-dind docker image
-            docker build --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:"${JENKINS_VERSION}" .
-            docker build --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:latest .
+            docker build --pull --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:"${JENKINS_VERSION}" .
+            docker build --pull --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:latest .
             # Prune build dir
             cd "${baseDir}" || exit 1
             rm -rf "${buildDir}"
