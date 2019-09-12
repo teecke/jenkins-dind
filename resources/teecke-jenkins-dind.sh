@@ -4,7 +4,10 @@
 /usr/local/bin/dockerd-entrypoint.sh &
 
 # Enable the docker daemon for jenkins user access
-sleep 5
+while [ ! -S /var/run/docker.sock ]
+do
+  sleep 2
+done
 chmod 666 /var/run/docker.sock
 
 # Start jenkins in the background
