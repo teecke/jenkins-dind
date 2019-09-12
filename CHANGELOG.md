@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.4.0 (2019-09-12)
+
+### Upgrade
+
+* Preserve env vars with sudo execution on the entrypoint ([ac7e263](https://github.com/teecke/jenkins-dind/commit/ac7e263))
+
+### Build
+
+* Update Auto Release Log adding v0.4.0 info with JPL ([de65be6](https://github.com/teecke/jenkins-dind/commit/de65be6))
+
+### Docs
+
+* Generate v0.3.2 changelog with JPL ([2346987](https://github.com/teecke/jenkins-dind/commit/2346987))
+
 ## v0.3.2 (2019-09-12)
 
 ### Update
