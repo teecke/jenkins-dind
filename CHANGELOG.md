@@ -1,5 +1,23 @@
 # Changelog
 
+## v0.3.2 (2019-09-12)
+
+### Update
+
+* Force pull in the docker image build task ([c76ea0c](https://github.com/teecke/jenkins-dind/commit/c76ea0c))
+
+### Fix
+
+* Wait for the docker socket in entrypoint execution ([e09241c](https://github.com/teecke/jenkins-dind/commit/e09241c))
+
+### Build
+
+* Update Auto Release Log adding v0.3.2 info with JPL ([acc8df5](https://github.com/teecke/jenkins-dind/commit/acc8df5))
+
+### Docs
+
+* Generate v0.3.1 changelog with JPL ([ab581d5](https://github.com/teecke/jenkins-dind/commit/ab581d5))
+
 ## v0.3.1 (2019-09-08)
 
 ### Build
