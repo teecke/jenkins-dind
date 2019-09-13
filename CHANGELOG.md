@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.5.0 (2019-09-13)
+
+### Upgrade
+
+* Don't preserve env vars with sudo ([eb9feed](https://github.com/teecke/jenkins-dind/commit/eb9feed))
+
+### Build
+
+* Update Auto Release Log adding v0.5.0 info with JPL ([0c0053c](https://github.com/teecke/jenkins-dind/commit/0c0053c))
+
+### Docs
+
+* Generate v0.4.1 changelog with JPL ([ea03e87](https://github.com/teecke/jenkins-dind/commit/ea03e87))
+
 ## v0.4.1 (2019-09-13)
 
 ### Update
