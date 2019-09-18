@@ -11,7 +11,7 @@ done
 chmod 666 /var/run/docker.sock
 
 # Start jenkins in the background
-sudo -u jenkins bash -c "/sbin/tini -- /usr/local/bin/jenkins.sh $@" &
+sudo -u jenkins env "PATH=$PATH" bash -c "/sbin/tini -s -- /usr/local/bin/jenkins.sh $@" &
 
 # Container main proccess. Allow docker & jenkins processes to be restarted
 tail -f /dev/null
