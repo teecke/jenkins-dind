@@ -19,8 +19,8 @@ RUN set -x \
 	&& [ "$JAVA_HOME" = "$(docker-java-home)" ]
 
 # Add sudo package and overwrite of default entrypoint
-RUN apk add --no-cache sudo && \
-    echo 'Defaults env_keep += "JAVA_* JENKINS_* REF COPY_REFERENCE_FILE_LOG"' >> /etc/sudoers
+RUN apk add --no-cache sudo openjdk8 && \
+	echo 'Defaults env_keep += "JAVA_* JENKINS_* REF COPY_REFERENCE_FILE_LOG"' >> /etc/sudoers
 
 COPY resources/teecke-jenkins-dind.sh /usr/local/bin/teecke-jenkins-dind.sh
 ENTRYPOINT ["/sbin/tini", "--", "/usr/local/bin/teecke-jenkins-dind.sh"]
