@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.5.1 (2019-09-18)
+
+### Update
+
+* Preserve PATH in jenkins start ([b1bd83b](https://github.com/teecke/jenkins-dind/commit/b1bd83b))
+* Include openjdk8 package ([c4f7e28](https://github.com/teecke/jenkins-dind/commit/c4f7e28))
+
+### Build
+
+* Update Auto Release Log adding v0.5.1 info with JPL ([399d1a7](https://github.com/teecke/jenkins-dind/commit/399d1a7))
+
+### Docs
+
+* Generate v0.5.0 changelog with JPL ([2cebbbc](https://github.com/teecke/jenkins-dind/commit/2cebbbc))
+
 ## v0.5.0 (2019-09-13)
 
 ### Upgrade
