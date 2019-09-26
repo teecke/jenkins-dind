@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.7.0 (2019-09-26)
+
+### Upgrade
+
+* Use Jenkins v2.190.1 ([8e14a27](https://github.com/teecke/jenkins-dind/commit/8e14a27))
+
+### Build
+
+* Update Auto Release Log adding v0.7.0 info with JPL ([066bfca](https://github.com/teecke/jenkins-dind/commit/066bfca))
+
+### Docs
+
+* Generate v0.6.0 changelog with JPL ([038045e](https://github.com/teecke/jenkins-dind/commit/038045e))
+
 ## v0.6.0 (2019-09-26)
 
 ### Upgrade
