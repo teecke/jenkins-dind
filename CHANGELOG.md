@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.7.1 (2019-09-27)
+
+### Update
+
+* Make the service resilient from restarts ([80efed2](https://github.com/teecke/jenkins-dind/commit/80efed2))
+
+### Build
+
+* Update Auto Release Log adding v0.7.1 info with JPL ([175f1f8](https://github.com/teecke/jenkins-dind/commit/175f1f8))
+
+### Docs
+
+* Generate v0.7.0 changelog with JPL ([08864d6](https://github.com/teecke/jenkins-dind/commit/08864d6))
+
 ## v0.7.0 (2019-09-26)
 
 ### Upgrade
