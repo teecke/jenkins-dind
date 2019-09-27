@@ -1,5 +1,8 @@
 #!/bin/bash -e
 
+# Ensure the docker socket does not exist
+rm -f /var/run/docker.sock
+
 # Start docker in the background
 /usr/local/bin/dockerd-entrypoint.sh &
 
