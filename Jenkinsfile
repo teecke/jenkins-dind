@@ -1,9 +1,9 @@
 #!groovy
 
-@Library('github.com/teecke/jenkins-pipeline-library@v3.3.0') _
+@Library('github.com/teecke/jenkins-pipeline-library@v3.4.1') _
 
 // Initialize global config
-cfg = jplConfig('jenkins-dind', 'docker', '', [email:'pedroamador.rodriguez+teecke@gmail.com'])
+cfg = jplConfig('jenkins-dind', 'docker', '', [email: env.CITEECKE_NOTIFY_EMAIL_TARGETS])
 String jenkinsVersion
 
 def publishDockerImage(String jenkinsVersion) {
