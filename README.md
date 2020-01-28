@@ -30,18 +30,24 @@ If you want to build the image:
 Build the Teecke Jenkins DIND docker image with:
 
 ```console
-docker build -t jenkins-dind .
+$ devcontrol build
 ```
+
+Then wait for the task to complete.
+
+#### Upgrade
 
 You can change the Jenkins version number in the "jenkins-version.ini" file:
 
 ```console
 cat jenkins-version.ini
-JENKINS_VERSION=2.190.1
-JENKINS_SHA=46fb1d25d9423fc66aadd648dc74b9772863a7fbbd89bfc14c873cd0c3436f05
+JENKINS_VERSION=2.204.1
+JENKINS_SHA=12b9ebbf9eb1cd1deab0d11512511bcd80a5d3a754dffab54dd6385d788d5284
 ```
 
 Open <https://updates.jenkins-ci.org/download/war/> URL and look for the SHA-256 hash string of the version you want. Then place both values (version number and jenkins WAR file SHA-256 string) in the `jenkins-version.ini` file.
+
+Once this info was changed, you can do the build as it is explained in this document.
 
 ### Run
 
