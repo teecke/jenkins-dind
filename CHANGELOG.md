@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.8.0 (2020-01-28)
+
+### Upgrade
+
+* Use Jenkins v2.204.1 ([d0d718d](https://github.com/teecke/jenkins-dind/commit/d0d718d))
+
+### Build
+
+* Update Auto Release Log adding v0.8.0 info with JPL ([906ca64](https://github.com/teecke/jenkins-dind/commit/906ca64))
+* Use environment variable for mail notificacions targets ([48d4f73](https://github.com/teecke/jenkins-dind/commit/48d4f73))
+
+### Docs
+
+* Update main readme including devcontrol build action ([51e2749](https://github.com/teecke/jenkins-dind/commit/51e2749))
+* Generate v0.7.1 changelog with JPL ([f2c5df1](https://github.com/teecke/jenkins-dind/commit/f2c5df1))
+
 ## v0.7.1 (2019-09-27)
 
 ### Update
