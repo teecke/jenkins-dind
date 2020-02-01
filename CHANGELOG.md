@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.9.0 (2020-02-01)
+
+### Upgrade
+
+* Use Jenkins v2.204.2 ([902e06d](https://github.com/teecke/jenkins-dind/commit/902e06d))
+
+### Build
+
+* Update Auto Release Log adding v0.9.0 info with JPL ([1db8aa7](https://github.com/teecke/jenkins-dind/commit/1db8aa7))
+
+### Docs
+
+* Generate v0.8.0 changelog with JPL ([f2e400c](https://github.com/teecke/jenkins-dind/commit/f2e400c))
+
 ## v0.8.0 (2020-01-28)
 
 ### Upgrade
