@@ -45,6 +45,7 @@ pipeline {
         stage ('Publish beta') {
             when { branch 'develop' }
             steps {
+                sh "devcontrol build beta"
                 publishDockerImage('beta')
             }
         }
