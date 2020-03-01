@@ -8,8 +8,11 @@ String jenkinsVersion
 
 def publishDockerImage(String jenkinsVersion) {
     docker.withRegistry("https://registry.hub.docker.com", 'teeckebot-docker-credentials') {
-        docker.image("teecke/jenkins-dind:latest").push()
         docker.image("teecke/jenkins-dind:${jenkinsVersion}").push()
+        if (jenkinsVersion != "beta") {
+            docker.image("teecke/jenkins-dind:latest").push()
+        }
+
     }
 }
 
@@ -37,6 +40,12 @@ pipeline {
                 script {
                     sh "devcontrol build"
                 }
+            }
+        }
+        stage ('Publish beta') {
+            when { branch 'develop' }
+            steps {
+                publishDockerImage('beta')
             }
         }
         stage('Make release') {
