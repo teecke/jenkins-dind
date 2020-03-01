@@ -41,8 +41,8 @@ You can change the Jenkins version number in the "jenkins-version.ini" file:
 
 ```console
 cat jenkins-version.ini
-JENKINS_VERSION=2.204.1
-JENKINS_SHA=12b9ebbf9eb1cd1deab0d11512511bcd80a5d3a754dffab54dd6385d788d5284
+JENKINS_VERSION=2.204.3
+JENKINS_SHA=aa35f86e92812b511fd97f52e22b1e35965ef984f5eb60215b70b5914f9dc9ea
 ```
 
 Open <https://updates.jenkins-ci.org/download/war/> URL and look for the SHA-256 hash string of the version you want. Then place both values (version number and jenkins WAR file SHA-256 string) in the `jenkins-version.ini` file.
