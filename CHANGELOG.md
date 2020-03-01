@@ -1,5 +1,25 @@
 # Changelog
 
+## v0.10.0 (2020-03-01)
+
+### New
+
+* Add beta version build ([7d95286](https://github.com/teecke/jenkins-dind/commit/7d95286))
+
+### Upgrade
+
+* Use Jenkins v2.204.3 ([1d547f7](https://github.com/teecke/jenkins-dind/commit/1d547f7))
+
+### Build
+
+* Update Auto Release Log adding v0.10.0 info with JPL ([befd4e2](https://github.com/teecke/jenkins-dind/commit/befd4e2))
+* Add beta build ([0e307d5](https://github.com/teecke/jenkins-dind/commit/0e307d5))
+* Add beta publish stage ([ca856eb](https://github.com/teecke/jenkins-dind/commit/ca856eb))
+
+### Docs
+
+* Generate v0.9.0 changelog with JPL ([9d99b7e](https://github.com/teecke/jenkins-dind/commit/9d99b7e))
+
 ## v0.9.0 (2020-02-01)
 
 ### Upgrade
