@@ -37,6 +37,11 @@ EOF
             checkDocker
             # Get jenkins version
             source jenkins-version.ini
+            if [ "$2" == "beta" ]; then
+                JENKINS_TAG="beta"
+            else
+                JENKINS_TAG=${JENKINS_VERSION}
+            fi
             # Prepare build directory
             baseDir="$(pwd)"
             buildDir="$(mktemp -d)"
@@ -49,8 +54,10 @@ EOF
             grep -v "^FROM\|^ENTRYPOINT" Dockerfile-alpine >> Dockerfile-teecke-jenkins-dind 
             echo "USER root" >> Dockerfile-teecke-jenkins-dind
             # Build the teecke/jenkins-dind docker image
-            docker build --pull --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:"${JENKINS_VERSION}" .
-            docker build --pull --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:latest .
+            docker build --pull --no-cache --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:"${JENKINS_TAG}" .
+            if [ ${JENKINS_TAG} != "beta" ]; then
+                docker build --build-arg JENKINS_VERSION="${JENKINS_VERSION}" --build-arg JENKINS_SHA="${JENKINS_SHA}" --file Dockerfile-teecke-jenkins-dind -t teecke/jenkins-dind:latest .
+            fi
             # Prune build dir
             cd "${baseDir}" || exit 1
             rm -rf "${buildDir}"
