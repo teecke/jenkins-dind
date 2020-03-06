@@ -1,5 +1,21 @@
 # Changelog
 
+## v0.11.0 (2020-03-06)
+
+### Upgrade
+
+* Use Jenkins v2.204.4 ([0f3ea68](https://github.com/teecke/jenkins-dind/commit/0f3ea68))
+
+### Build
+
+* Update Auto Release Log adding v0.11.0 info with JPL ([80c35b1](https://github.com/teecke/jenkins-dind/commit/80c35b1))
+* Execute e2e tests during new release ([dd1bff6](https://github.com/teecke/jenkins-dind/commit/dd1bff6))
+* Add e2e tests stage ([c06bbe5](https://github.com/teecke/jenkins-dind/commit/c06bbe5))
+
+### Docs
+
+* Generate v0.10.0 changelog with JPL ([593e16b](https://github.com/teecke/jenkins-dind/commit/593e16b))
+
 ## v0.10.0 (2020-03-01)
 
 ### New
