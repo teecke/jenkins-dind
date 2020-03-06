@@ -39,18 +39,18 @@ pipeline {
             steps {
                 script {
                     sh "devcontrol build"
+                    sh "devcontrol build beta"
                 }
             }
         }
         stage ('Publish beta') {
-            when { branch 'develop' }
+            when { anyOf { branch 'develop'; branch 'release/new' } }
             steps {
-                sh "devcontrol build beta"
                 publishDockerImage('beta')
             }
         }
         stage ('Run E2E tests') {
-            when { branch 'develop' }
+            when { anyOf { branch 'develop'; branch 'release/new' } }
             steps {
                 sh "devcontrol run-e2e-tests"
             }
