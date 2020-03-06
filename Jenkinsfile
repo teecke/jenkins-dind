@@ -49,6 +49,12 @@ pipeline {
                 publishDockerImage('beta')
             }
         }
+        stage ('Run E2E tests') {
+            when { branch 'develop' }
+            steps {
+                sh "devcontrol run-e2e-tests"
+            }
+        }
         stage('Make release') {
             when { expression { cfg.BRANCH_NAME.startsWith('release/new') } }
             steps {
