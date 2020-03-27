@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.13.0 (2020-03-27)
+
+### Upgrade
+
+* Use Jenkins v2.222.1 ([13b3512](https://github.com/teecke/jenkins-dind/commit/13b3512))
+
+### Build
+
+* Update Auto Release Log adding v0.13.0 info with JPL ([1c616dc](https://github.com/teecke/jenkins-dind/commit/1c616dc))
+
+### Docs
+
+* Generate v0.12.0 changelog with JPL ([db56e55](https://github.com/teecke/jenkins-dind/commit/db56e55))
+
 ## v0.12.0 (2020-03-08)
 
 ### Upgrade
