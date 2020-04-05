@@ -6,13 +6,17 @@
 cfg = jplConfig('jenkins-dind', 'docker', '', [email: env.CITEECKE_NOTIFY_EMAIL_TARGETS])
 String jenkinsVersion
 
+/**
+ * Publish docker image
+ *
+ * @param nextReleaseNumber String Release number to be used as tag
+ */
 def publishDockerImage(String jenkinsVersion) {
-    docker.withRegistry("https://registry.hub.docker.com", 'teeckebot-docker-credentials') {
+    docker.withRegistry("", 'teeckebot-docker-credentials') {
         docker.image("teecke/jenkins-dind:${jenkinsVersion}").push()
         if (jenkinsVersion != "beta") {
             docker.image("teecke/jenkins-dind:latest").push()
         }
-
     }
 }
 
@@ -30,9 +34,7 @@ pipeline {
         }
         stage ('Bash linter') {
             steps {
-                script {
-                    sh "devcontrol run-bash-linter"
-                }
+                sh "devcontrol run-bash-linter"
             }
         }
         stage ('Build') {
