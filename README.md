@@ -1,3 +1,7 @@
+# DEPRECATED
+
+Please use https://github.com/tpbtools/jenkins-dind
+
 # Teecke - Jenkins Dind
 
 Official Docker Jenkins combined with Official Docker DIND.
