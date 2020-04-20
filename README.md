@@ -1,6 +1,6 @@
 # DEPRECATED
 
-Please use https://github.com/tpbtools/jenkins-dind
+Please visit https://github.com/tpbtools/jenkins-dind
 
 # Teecke - Jenkins Dind
 
@@ -25,7 +25,7 @@ If you want to build the image:
 
 - Linux or Mac as the base OS for the build.
 - [Docker](https://www.docker.com) installed.
-- [Teecke devcontrol](https://github.com/teecke/devcontrol) installed.
+- [Teecke devcontrol](https://github.com/ayudadigital/devcontrol) installed.
 
 ## Usage
 
