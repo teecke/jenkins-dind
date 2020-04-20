@@ -1,6 +1,6 @@
 # DEPRECATED
 
-Please visit https://github.com/tpbtools/jenkins-dind
+Please visit https://github.com/ayudadigital/jenkins-dind
 
 # Teecke - Jenkins Dind
 
